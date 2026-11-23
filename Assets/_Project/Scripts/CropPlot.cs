@@ -1,3 +1,4 @@
+using System.Resources;
 using UnityEngine;
 
 public enum PlotState { Empty, Growing, Ripe, Withered }
@@ -18,6 +19,7 @@ public class CropPlot : MonoBehaviour
     [SerializeField] float secondsWaterLasts = 15f;
     [SerializeField] float witherAfterDrySeconds = 15f;
     [SerializeField] float fertilityCostPerHarvest = 3f;
+    [SerializeField] float waterCostPerWatering = 10f;
     [SerializeField] GameObject residuePrefab;
 
     public PlotState State { get; private set; } = PlotState.Empty;
@@ -79,6 +81,7 @@ public class CropPlot : MonoBehaviour
     public bool TryWater()
     {
         if (State != PlotState.Growing) return false;
+        if (!ResourceManager.Instance.TrySpendWater(waterCostPerWatering)) return false;
         water = secondsWaterLasts;
         drySeconds = 0f;
         UpdateVisuals();
