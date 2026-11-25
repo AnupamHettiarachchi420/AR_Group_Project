@@ -93,7 +93,10 @@ public class CropPlot : MonoBehaviour
         if (State != PlotState.Ripe && State != PlotState.Withered) return false;
 
         if (State == PlotState.Ripe)
+        {
             ResourceManager.Instance.AddFertility(-fertilityCostPerHarvest);
+            ResourceManager.Instance.RecordHarvest();
+        }
 
         if (residuePrefab != null)
         {

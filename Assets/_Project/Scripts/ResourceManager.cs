@@ -16,6 +16,10 @@ public class ResourceManager : MonoBehaviour
     public float MaxWater => maxWater;
     public float MaxEnergy => maxEnergy;
 
+    public int WasteDiverted { get; private set; }
+    public int CropsHarvested { get; private set; }
+    public float EnergyProduced { get; private set; }
+
     void Awake()
     {
         Instance = this;
@@ -36,6 +40,7 @@ public class ResourceManager : MonoBehaviour
 
     public void AddEnergy(float amount)
     {
+        if (amount > 0f) EnergyProduced += amount;
         Energy = Mathf.Clamp(Energy + amount, 0f, maxEnergy);
         ResourcesChanged?.Invoke();
     }
@@ -54,5 +59,17 @@ public class ResourceManager : MonoBehaviour
         Energy -= amount;
         ResourcesChanged?.Invoke();
         return true;
+    }
+
+    public void RecordWasteDiverted()
+    {
+        WasteDiverted++;
+        ResourcesChanged?.Invoke();
+    }
+
+    public void RecordHarvest()
+    {
+        CropsHarvested++;
+        ResourcesChanged?.Invoke();
     }
 }
