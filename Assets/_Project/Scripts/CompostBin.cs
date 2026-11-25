@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class CompostBin : MonoBehaviour
+public class CompostBin : MonoBehaviour, IWasteReceiver
 {
     [SerializeField] float fertilityPerItem = 5f;
 
     public bool TryDeposit(WasteItem item)
     {
-        if (item.type == WasteType.Plastic)
+        if (item.type != WasteType.CropResidue)
         {
-            Debug.Log("Contamination! Plastic does not belong in the compost.");
+            Debug.Log("The compost bin only takes crop residue.");
             return false;
         }
         ResourceManager.Instance.AddFertility(fertilityPerItem);
