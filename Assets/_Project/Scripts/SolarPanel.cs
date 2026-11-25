@@ -7,6 +7,7 @@ public class SolarPanel : MonoBehaviour
 
     void Update()
     {
-        ResourceManager.Instance.AddEnergy(energyPerSecond * Time.deltaTime);
+        float multiplier = WeatherManager.Instance != null ? WeatherManager.Instance.SolarMultiplier : 1f;
+        ResourceManager.Instance.AddEnergy(energyPerSecond * multiplier * Time.deltaTime);
     }
 }
