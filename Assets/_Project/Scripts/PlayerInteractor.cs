@@ -17,7 +17,7 @@ public class PlayerInteractor : MonoBehaviour
         {
             foreach (var h in hits)
             {
-                if (h.TryGetComponent(out CompostBin bin) && bin.TryDeposit(carried))
+                if (h.TryGetComponent(out IWasteReceiver receiver) && receiver.TryDeposit(carried))
                 {
                     carried = null;
                     return;
