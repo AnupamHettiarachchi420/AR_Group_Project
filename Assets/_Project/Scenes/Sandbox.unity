@@ -119,6 +119,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &110201326
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 78074542368329737, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_Name
+      value: RainwaterTank2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898563345167309818, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898563345167309818, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898563345167309818, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898563345167309818, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898563345167309818, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898563345167309818, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898563345167309818, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898563345167309818, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898563345167309818, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898563345167309818, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
 --- !u!1 &125878602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,7 +1538,7 @@ MonoBehaviour:
   timeLimit: 240
   cropsGoal: 1
   wasteGoal: 1
-  maxLooseWaste: 3
+  maxLooseWaste: 15
   goalLabel: {fileID: 1379403360}
   endPanel: {fileID: 791508774}
   endTitle: {fileID: 210929347}
@@ -2628,6 +2685,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1985488322}
   - component: {fileID: 1985488323}
+  - component: {fileID: 1985488324}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2665,6 +2723,23 @@ MonoBehaviour:
   maxWater: 100
   maxEnergy: 100
   startWater: 50
+--- !u!114 &1985488324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985488321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c957b943fc2d9cb44bfe5ef13d30eb7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeatherManager
+  sun: {fileID: 203844588}
+  rainChance: 0.25
+  cloudyChance: 0.3
+  minSeconds: 25
+  maxSeconds: 45
 --- !u!1 &2008375811
 GameObject:
   m_ObjectHideFlags: 0
@@ -3353,6 +3428,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d4c78f6ab4dceb49bf3146a9d03283a, type: 3}
+--- !u!1001 &8806778833176786659
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 78074542368329737, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_Name
+      value: RainwaterTank1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898563345167309818, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898563345167309818, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898563345167309818, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898563345167309818, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898563345167309818, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898563345167309818, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898563345167309818, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898563345167309818, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898563345167309818, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898563345167309818, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 28b45dae85525b748a036bda6a90e45f, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3380,3 +3512,5 @@ SceneRoots:
   - {fileID: 1271940954}
   - {fileID: 2371858358163955779}
   - {fileID: 1037840257}
+  - {fileID: 8806778833176786659}
+  - {fileID: 110201326}
