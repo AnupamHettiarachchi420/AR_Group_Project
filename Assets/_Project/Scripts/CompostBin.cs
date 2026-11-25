@@ -1,3 +1,4 @@
+using System.Resources;
 using UnityEngine;
 
 public class CompostBin : MonoBehaviour, IWasteReceiver
@@ -12,6 +13,7 @@ public class CompostBin : MonoBehaviour, IWasteReceiver
             return false;
         }
         ResourceManager.Instance.AddFertility(fertilityPerItem);
+        ResourceManager.Instance.RecordWasteDiverted();
         Destroy(item.gameObject);
         return true;
     }

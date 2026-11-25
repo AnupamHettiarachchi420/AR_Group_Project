@@ -1,3 +1,4 @@
+using System.Resources;
 using UnityEngine;
 
 public class BiogasDigester : MonoBehaviour, IWasteReceiver
@@ -15,6 +16,7 @@ public class BiogasDigester : MonoBehaviour, IWasteReceiver
             return false;
         }
         pendingEnergy += energyPerItem;
+        ResourceManager.Instance.RecordWasteDiverted();
         Destroy(item.gameObject);
         return true;
     }
