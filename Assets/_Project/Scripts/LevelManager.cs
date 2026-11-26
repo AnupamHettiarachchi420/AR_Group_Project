@@ -63,9 +63,15 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    public bool IsFinished => finished;
+
     public void Retry()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneLoader.Load(SceneManager.GetActiveScene().name);
+    }
+
+    public void GoToMenu()
+    {
+        SceneLoader.Load("MainMenu");
     }
 }

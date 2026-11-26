@@ -178,9 +178,9 @@ public class HelperRobot : MonoBehaviour
     Transform FindReceiverFor(WasteType type)
     {
         if (type == WasteType.CropResidue)
-            return Nearest(FindObjectsByType<CompostBin>(FindObjectsSortMode.None));
+            return Nearest(FindObjectsByType<CompostBin>());
         if (type == WasteType.Manure)
-            return Nearest(FindObjectsByType<BiogasDigester>(FindObjectsSortMode.None));
+            return Nearest(FindObjectsByType<BiogasDigester>());
         return null;
     }
 
