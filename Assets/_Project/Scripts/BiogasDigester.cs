@@ -17,6 +17,7 @@ public class BiogasDigester : MonoBehaviour, IWasteReceiver
         }
         pendingEnergy += energyPerItem;
         ResourceManager.Instance.RecordWasteDiverted();
+        AudioManager.Play(Sfx.Deliver);
         Destroy(item.gameObject);
         return true;
     }
