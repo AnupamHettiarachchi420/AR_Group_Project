@@ -75,6 +75,7 @@ public class CropPlot : MonoBehaviour
         water = 0f;
         drySeconds = 0f;
         UpdateVisuals();
+        AudioManager.Play(Sfx.Plant);
         return true;
     }
 
@@ -85,6 +86,7 @@ public class CropPlot : MonoBehaviour
         water = secondsWaterLasts;
         drySeconds = 0f;
         UpdateVisuals();
+        AudioManager.Play(Sfx.Water);
         return true;
     }
 
@@ -108,6 +110,7 @@ public class CropPlot : MonoBehaviour
         growth = 0f;
         water = 0f;
         UpdateVisuals();
+        AudioManager.Play(Sfx.Harvest);
         return true;
     }
 

@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] int cropsGoal = 6;
     [SerializeField] int wasteGoal = 10;
     [SerializeField] int maxLooseWaste = 15;
+    [SerializeField] int levelNumber = 1;
 
     [Header("UI")]
     [SerializeField] TMP_Text goalLabel;
@@ -56,10 +57,26 @@ public class LevelManager : MonoBehaviour
         var rm = ResourceManager.Instance;
         endPanel.SetActive(true);
         endTitle.text = won ? "Valley restored!" : "Try again";
+
+        string extra = "";
+        if (won)
+        {
+            int score = rm.CropsHarvested * 100 + rm.WasteDiverted * 50
+                      + Mathf.RoundToInt(rm.EnergyProduced)
+                      + Mathf.RoundToInt(Mathf.Max(0f, timeLeft)) * 5;
+            float fraction = timeLeft / timeLimit;
+            int stars = fraction > 0.6f ? 3 : (fraction > 0.3f ? 2 : 1);
+            bool newBest = SaveSystem.RecordResult(levelNumber, score, stars);
+            extra = "\nScore: " + score + "   Stars: " + stars + " / 3" + (newBest ? "   NEW BEST!" : "");
+        }
+
         endDetails.text = reason
             + "\nCrops harvested: " + rm.CropsHarvested
             + "\nWaste diverted: " + rm.WasteDiverted
-            + "\nEnergy produced: " + rm.EnergyProduced.ToString("0");
+            + "\nEnergy produced: " + rm.EnergyProduced.ToString("0")
+            + extra;
+
+        AudioManager.Play(won ? Sfx.Success : Sfx.Fail);
         Time.timeScale = 0f;
     }
 
