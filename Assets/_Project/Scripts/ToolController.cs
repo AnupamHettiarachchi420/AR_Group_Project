@@ -38,7 +38,6 @@ public class ToolController : MonoBehaviour
     void UseTool()
     {
         CropPlot plot = FindNearestPlot();
-        Debug.Log("UseTool: " + current + ", plot found: " + (plot != null));
         if (plot == null) return;
 
         switch (current)
@@ -71,7 +70,18 @@ public class ToolController : MonoBehaviour
 
     void RefreshLabel()
     {
-        if (toolLabel != null)
-            toolLabel.text = "Tool: " + current + "   (1 Seeds, 2 Water, 3 Hands)";
+        if (toolLabel == null) return;
+
+        toolLabel.text = "<color=#8CE99A><b>TOOL</b></color>      "
+                       + ToolItem(Tool.Seeds, "1", "Seeds") + "      "
+                       + ToolItem(Tool.WateringCan, "2", "Watering can") + "      "
+                       + ToolItem(Tool.Hands, "3", "Harvest");
+    }
+
+    string ToolItem(Tool tool, string key, string label)
+    {
+        if (tool == current)
+            return "<color=#FFD43B><b>[" + key + "] " + label + "</b></color>";
+        return "<color=#8A9690>[" + key + "] " + label + "</color>";
     }
 }

@@ -36,6 +36,7 @@ public class PlayerInteractor : MonoBehaviour
     {
         carried = item;
         AudioManager.Play(Sfx.Pickup);
+        GameEvents.RaiseItemPickedUp(item);
         item.Held = true;
         item.GetComponent<Collider>().enabled = false;
         item.transform.SetParent(carryPoint);
