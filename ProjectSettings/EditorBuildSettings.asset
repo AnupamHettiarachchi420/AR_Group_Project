@@ -14,5 +14,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/_Project/Scenes/Level2_DroughtFarm.unity
+    guid: 698aba7bd5ac7af46b3cb0c1cd34d170
+  - enabled: 1
+    path: Assets/_Project/Scenes/Level3_Village.unity
+    guid: 6c6a28f8b38d6e745a55079690f1e0c2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
