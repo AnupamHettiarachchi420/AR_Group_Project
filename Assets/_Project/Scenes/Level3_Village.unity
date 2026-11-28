@@ -1241,6 +1241,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569397383}
   m_CullTransparentMesh: 1
+--- !u!1001 &581824702
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 796846347904828406, guid: 64ee1538c93936b448983db9f71e4908, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 796846347904828406, guid: 64ee1538c93936b448983db9f71e4908, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796846347904828406, guid: 64ee1538c93936b448983db9f71e4908, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 796846347904828406, guid: 64ee1538c93936b448983db9f71e4908, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 796846347904828406, guid: 64ee1538c93936b448983db9f71e4908, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796846347904828406, guid: 64ee1538c93936b448983db9f71e4908, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796846347904828406, guid: 64ee1538c93936b448983db9f71e4908, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796846347904828406, guid: 64ee1538c93936b448983db9f71e4908, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796846347904828406, guid: 64ee1538c93936b448983db9f71e4908, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796846347904828406, guid: 64ee1538c93936b448983db9f71e4908, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399731654308869943, guid: 64ee1538c93936b448983db9f71e4908, type: 3}
+      propertyPath: m_Name
+      value: HelperRobot2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703104757603148164, guid: 64ee1538c93936b448983db9f71e4908, type: 3}
+      propertyPath: chargingPad
+      value: 
+      objectReference: {fileID: 585192260}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64ee1538c93936b448983db9f71e4908, type: 3}
 --- !u!1 &585192256
 GameObject:
   m_ObjectHideFlags: 0
@@ -2064,7 +2125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5741958133881027212, guid: e8e9f381fb0e81a43bb2bb97613ca805, type: 3}
       propertyPath: secondsBetweenManure
-      value: 20
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6684068631197282777, guid: e8e9f381fb0e81a43bb2bb97613ca805, type: 3}
       propertyPath: m_Name
@@ -2623,7 +2684,7 @@ MonoBehaviour:
   timeLimit: 420
   cropsGoal: 10
   wasteGoal: 20
-  maxLooseWaste: 8
+  maxLooseWaste: 12
   levelNumber: 3
   nextSceneName: 
   goalLabel: {fileID: 1379403360}
@@ -3624,7 +3685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5741958133881027212, guid: e8e9f381fb0e81a43bb2bb97613ca805, type: 3}
       propertyPath: secondsBetweenManure
-      value: 20
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6684068631197282777, guid: e8e9f381fb0e81a43bb2bb97613ca805, type: 3}
       propertyPath: m_Name
@@ -3682,6 +3743,10 @@ PrefabInstance:
     - target: {fileID: 1226164190411452801, guid: e8e9f381fb0e81a43bb2bb97613ca805, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5741958133881027212, guid: e8e9f381fb0e81a43bb2bb97613ca805, type: 3}
+      propertyPath: secondsBetweenManure
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6684068631197282777, guid: e8e9f381fb0e81a43bb2bb97613ca805, type: 3}
       propertyPath: m_Name
@@ -4662,6 +4727,10 @@ PrefabInstance:
     - target: {fileID: 1226164190411452801, guid: e8e9f381fb0e81a43bb2bb97613ca805, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5741958133881027212, guid: e8e9f381fb0e81a43bb2bb97613ca805, type: 3}
+      propertyPath: secondsBetweenManure
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6684068631197282777, guid: e8e9f381fb0e81a43bb2bb97613ca805, type: 3}
       propertyPath: m_Name
@@ -5809,7 +5878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5741958133881027212, guid: e8e9f381fb0e81a43bb2bb97613ca805, type: 3}
       propertyPath: secondsBetweenManure
-      value: 20
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6684068631197282777, guid: e8e9f381fb0e81a43bb2bb97613ca805, type: 3}
       propertyPath: m_Name
@@ -6102,7 +6171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2399731654308869943, guid: 64ee1538c93936b448983db9f71e4908, type: 3}
       propertyPath: m_Name
-      value: HelperRobot
+      value: HelperRobot1
       objectReference: {fileID: 0}
     - target: {fileID: 2703104757603148164, guid: 64ee1538c93936b448983db9f71e4908, type: 3}
       propertyPath: chargingPad
@@ -6207,6 +6276,7 @@ SceneRoots:
   - {fileID: 8806778833176786659}
   - {fileID: 585192260}
   - {fileID: 6331749888033772755}
+  - {fileID: 581824702}
   - {fileID: 2125362875}
   - {fileID: 37386544}
   - {fileID: 2124921982}
