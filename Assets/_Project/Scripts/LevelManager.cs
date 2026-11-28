@@ -11,12 +11,14 @@ public class LevelManager : MonoBehaviour
     [SerializeField] int wasteGoal = 10;
     [SerializeField] int maxLooseWaste = 15;
     [SerializeField] int levelNumber = 1;
+    [SerializeField] string nextSceneName;
 
     [Header("UI")]
     [SerializeField] TMP_Text goalLabel;
     [SerializeField] GameObject endPanel;
     [SerializeField] TMP_Text endTitle;
     [SerializeField] TMP_Text endDetails;
+    [SerializeField] GameObject nextButton;
 
     float timeLeft;
     bool finished;
@@ -61,6 +63,7 @@ public class LevelManager : MonoBehaviour
         finished = true;
         var rm = ResourceManager.Instance;
         endPanel.SetActive(true);
+        if (nextButton != null) nextButton.SetActive(won && !string.IsNullOrEmpty(nextSceneName));
         endTitle.text = won ? "Valley restored!" : "Try again";
         endTitle.color = won ? new Color(0.55f, 0.91f, 0.6f) : new Color(1f, 0.53f, 0.53f);
 
@@ -91,6 +94,11 @@ public class LevelManager : MonoBehaviour
     public void Retry()
     {
         SceneLoader.Load(SceneManager.GetActiveScene().name);
+    }
+
+    public void NextLevel()
+    {
+        SceneLoader.Load(nextSceneName);
     }
 
     public void GoToMenu()
