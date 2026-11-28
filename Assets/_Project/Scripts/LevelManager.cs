@@ -37,11 +37,16 @@ public class LevelManager : MonoBehaviour
 
         int minutes = Mathf.Max(0, (int)(timeLeft / 60f));
         int seconds = Mathf.Max(0, (int)(timeLeft % 60f));
-        goalLabel.text = "Time: " + minutes + ":" + seconds.ToString("00")
-            + "\nCrops harvested: " + rm.CropsHarvested + " / " + cropsGoal
-            + "\nWaste diverted: " + rm.WasteDiverted + " / " + wasteGoal
-            + "\nEnergy produced: " + rm.EnergyProduced.ToString("0")
-            + "\nLoose waste: " + WasteItem.Count + " / " + maxLooseWaste;
+        string cropsColor = rm.CropsHarvested >= cropsGoal ? "#8CE99A" : "#FFFFFF";
+        string wasteColor = rm.WasteDiverted >= wasteGoal ? "#8CE99A" : "#FFFFFF";
+        string looseColor = WasteItem.Count > maxLooseWaste * 0.7f ? "#FF8787" : "#FFFFFF";
+
+        goalLabel.text =
+              "<b>TIME  " + minutes + ":" + seconds.ToString("00") + "</b>"
+            + "\n<color=" + cropsColor + ">Crops  " + rm.CropsHarvested + " / " + cropsGoal + "</color>"
+            + "\n<color=" + wasteColor + ">Waste diverted  " + rm.WasteDiverted + " / " + wasteGoal + "</color>"
+            + "\n<color=#FFD43B>Energy made  " + rm.EnergyProduced.ToString("0") + "</color>"
+            + "\n<color=" + looseColor + ">Loose waste  " + WasteItem.Count + " / " + maxLooseWaste + "</color>";
 
         if (rm.CropsHarvested >= cropsGoal && rm.WasteDiverted >= wasteGoal)
             End(true, "Every waste stream became a resource.");
@@ -57,6 +62,7 @@ public class LevelManager : MonoBehaviour
         var rm = ResourceManager.Instance;
         endPanel.SetActive(true);
         endTitle.text = won ? "Valley restored!" : "Try again";
+        endTitle.color = won ? new Color(0.55f, 0.91f, 0.6f) : new Color(1f, 0.53f, 0.53f);
 
         string extra = "";
         if (won)

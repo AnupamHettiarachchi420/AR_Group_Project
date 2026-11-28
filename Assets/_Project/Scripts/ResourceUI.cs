@@ -29,13 +29,14 @@ public class ResourceUI : MonoBehaviour
     void Refresh()
     {
         var rm = ResourceManager.Instance;
-        string weather = WeatherManager.Instance != null
-            ? "\nWeather: " + WeatherManager.Instance.Current
-            : "";
+        string weather = "";
+        if (WeatherManager.Instance != null)
+            weather = "\n<color=#A5D8FF>Weather  " + WeatherManager.Instance.Current + "</color>";
 
-        label.text = "Fertility: " + rm.Fertility.ToString("0")
-                   + "\nWater: " + rm.Water.ToString("0")
-                   + "\nEnergy: " + rm.Energy.ToString("0")
-                   + weather;
+        label.text =
+              "<color=#8CE99A><b>Fertility</b>  " + rm.Fertility.ToString("0") + "</color>"
+            + "\n<color=#74C0FC><b>Water</b>  " + rm.Water.ToString("0") + " / " + rm.MaxWater.ToString("0") + "</color>"
+            + "\n<color=#FFD43B><b>Energy</b>  " + rm.Energy.ToString("0") + " / " + rm.MaxEnergy.ToString("0") + "</color>"
+            + weather;
     }
 }

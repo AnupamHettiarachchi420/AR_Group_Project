@@ -15,6 +15,7 @@ public class CompostBin : MonoBehaviour, IWasteReceiver
         ResourceManager.Instance.AddFertility(fertilityPerItem);
         ResourceManager.Instance.RecordWasteDiverted();
         AudioManager.Play(Sfx.Deliver);
+        GameEvents.RaiseWasteDelivered(item.type);
         Destroy(item.gameObject);
         return true;
     }
